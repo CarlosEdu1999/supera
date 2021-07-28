@@ -67,4 +67,14 @@ public class Endereço {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
+
+    public Endereço(String logradouro, Integer cep, Integer numero, String cidade) {
+        this.logradouro = logradouro;
+        this.cep = cep;
+        this.numero = numero;
+        this.cidade = cidade;
+    }
+
+    public Endereço() {
+    }
 }
