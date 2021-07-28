@@ -31,4 +31,10 @@ public class Pessoa {
     @JoinColumn(name = "endereço2", referencedColumnName = "id")
     private Endereço endereçoSecundário;
 
+    public Pessoa(String nome, LocalDate dataDeNascimento, Endereço endereçoPrincipal, Endereço endereçoSecundário) {
+        this.nome = nome;
+        this.dataDeNascimento = dataDeNascimento;
+        this.endereçoPrincipal = endereçoPrincipal;
+        this.endereçoSecundário = endereçoSecundário;
+    }
 }

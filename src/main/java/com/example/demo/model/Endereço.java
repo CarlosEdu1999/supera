@@ -21,10 +21,10 @@ public class Endereço {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id ;
 
-    @Column(name="logradouro")
+    @Column(name="logradouro",unique = true)
     private String logradouro;
 
-    @Column(name = "cep")
+    @Column(name = "cep",unique = true)
     private Integer cep;
 
     @Column(name = "numero")
@@ -33,4 +33,10 @@ public class Endereço {
     @Column(name = "cidade")
     private String cidade;
 
+    public Endereço(String logradouro, Integer cep, Integer numero, String cidade) {
+        this.logradouro = logradouro;
+        this.cep = cep;
+        this.numero = numero;
+        this.cidade = cidade;
+    }
 }
