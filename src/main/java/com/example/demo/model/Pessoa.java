@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Table(name = "pessoa")
 public class Pessoa {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "nome")
@@ -16,11 +16,11 @@ public class Pessoa {
     @Column(name = "dataDeNascimento")
     private LocalDate dataDeNascimento;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "endereço", referencedColumnName = "id")
     private Endereço endereçoPrincipal;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "endereço2", referencedColumnName = "id")
     private Endereço endereçoSecundário;
 
@@ -62,5 +62,15 @@ public class Pessoa {
 
     public void setEndereçoSecundário(Endereço endereçoSecundário) {
         this.endereçoSecundário = endereçoSecundário;
+    }
+
+    public Pessoa(String nome, LocalDate dataDeNascimento, Endereço endereçoPrincipal, Endereço endereçoSecundário) {
+        this.nome = nome;
+        this.dataDeNascimento = dataDeNascimento;
+        this.endereçoPrincipal = endereçoPrincipal;
+        this.endereçoSecundário = endereçoSecundário;
+    }
+
+    public Pessoa() {
     }
 }
