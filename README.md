@@ -1,6 +1,6 @@
 # Desafio
 
-link para os métodos http abaixo
+
 
 Para rodar o projeto basta baixar e dar run.
 
