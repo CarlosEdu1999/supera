@@ -112,5 +112,16 @@ public class PessoaController {
        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(pessoa));
 
     }
+    @DeleteMapping("/pessoas/{id}")
+    public void deleteById(@PathVariable long id) {
+        try {
+            repository.deleteById(id);
+            ResponseEntity.status(HttpStatus.OK).build();
+        } catch (IllegalArgumentException e) {
+            ResponseEntity.notFound().build();
 
+        }
+
+
+    }
 }
