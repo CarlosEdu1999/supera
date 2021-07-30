@@ -8,9 +8,6 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "pessoa")
 public class Pessoa {
     @Id
@@ -36,5 +33,48 @@ public class Pessoa {
         this.dataDeNascimento = dataDeNascimento;
         this.endereçoPrincipal = endereçoPrincipal;
         this.endereçoSecundário = endereçoSecundário;
+    }
+
+    public Endereço getEndereçoPrincipal() {
+        return endereçoPrincipal;
+    }
+
+    public void setEndereçoPrincipal(Endereço endereçoPrincipal) {
+        this.endereçoPrincipal = endereçoPrincipal;
+    }
+
+    public Endereço getEndereçoSecundário() {
+        return endereçoSecundário;
+    }
+
+    public void setEndereçoSecundário(Endereço endereçoSecundário) {
+        this.endereçoSecundário = endereçoSecundário;
+    }
+
+    public Pessoa() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public LocalDate getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(LocalDate dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
     }
 }
